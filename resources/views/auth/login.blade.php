@@ -3,6 +3,14 @@
 @section('title', 'Login')
 
 @section('content')
+
+<!-- Tambahan logo di atas form login -->
+<div class="text-center mb-4">
+    <img src="{{ asset('images/logo-klinik.png') }}" alt="Logo Klinik App" height="100">
+    <h2 class="mt-2">Selamat Datang di Klinik App</h2>
+    <p class="text-muted">Silakan login untuk melanjutkan</p>
+</div>
+
 <div class="row justify-content-center">
     <div class="col-md-4">
         <div class="card">

@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinik Management - @yield('title')</title>
+    <title>TRANSMEDIC - @yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-navbar-shadow {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white custom-navbar-shadow">
         <div class="container">
-            <a class="navbar-brand" href="/dashboard">Klinik Management</a>
+            <img src="{{ asset('images/logo-klinik.png') }}" alt="Logo Klinik App" height="50">
+            <a class="navbar-brand ms-3" href="/dashboard">TRANSMEDIC</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
