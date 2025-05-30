@@ -42,8 +42,10 @@
                             <a href="{{ route('checkups.show', $checkup->id) }}" class="btn btn-sm btn-info">Detail</a>
                             @if(auth()->user()->role === 'perawat' && !$checkup->weight)
                                 <a href="{{ route('checkups.edit', $checkup->id) }}" class="btn btn-sm btn-primary">Isi Data</a>
-                            @elseif(auth()->user()->role === 'dokter' && $checkup->weight && !$checkup->diagnosis)
+                            @elseif(auth()->user()->role === 'dokter' && !$checkup->diagnosis)
                                 <a href="{{ route('checkups.edit', $checkup->id) }}" class="btn btn-sm btn-primary">Diagnosa</a>
+                            @elseif(auth()->user()->role === 'apoteker')
+                                <a href="{{ route('prescriptions.create', $checkup->id) }}" class="btn btn-sm btn-light float-end">Tambah Resep</a>
                             @endif
                         </td>
                     </tr>

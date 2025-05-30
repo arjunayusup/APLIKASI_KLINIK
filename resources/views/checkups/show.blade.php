@@ -62,7 +62,7 @@
     <div class="card">
         <div class="card-header bg-info text-white">
             Resep Obat
-            @if(auth()->user()->role === 'apoteker' && $checkup->diagnosis && $checkup->prescriptions->count() == 0)
+            @if(auth()->user()->role === 'apoteker')
                 <a href="{{ route('prescriptions.create', $checkup->id) }}" class="btn btn-sm btn-light float-end">Tambah Resep</a>
             @endif
         </div>
