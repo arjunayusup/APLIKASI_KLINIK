@@ -1,64 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Aplikasi Manajemen Klinik - Laravel 8
+<br>
+Aplikasi web untuk manajemen klinik dengan sistem multi-role (pendaftaran, perawat, dokter, apoteker) menggunakan Laravel 8 dengan autentikasi custom.
+<br>
+<br>
+#FITUR UTAMA
+<br>
+- Sistem login custom tanpa menggunakan bawaan Laravel
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+- Manajemen data pasien (oleh staff pendaftaran)
 
-## About Laravel
+- Pemeriksaan fisik oleh perawat (berat badan, tekanan darah)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Diagnosa oleh dokter (keluhan, hasil diagnosa)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Manajemen resep obat oleh apoteker
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Tampilan berbeda untuk setiap role pengguna
+<br>
+<br>
+#PERSYARATAN SYSTEM
+<br>
 
-## Learning Laravel
+- PHP 7.4 atau lebih baru
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Composer
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- MySQL 5.7+
+<br>
+<br>
+#INSTALASI
+<br>
+Clone repository:
+<br>
 
-## Laravel Sponsors
+- git clone https://github.com/username/APLIKASI_KLINIK.git
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- cd APLIKASI_KLINIK
 
-### Premium Partners
+- composer install
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- cp .env.example .env
 
-## Contributing
+- php artisan key:generate
+<br>
+<br>
+#SETTING DATABASE
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+DB_CONNECTION=mysql
+<br>
+DB_HOST=127.0.0.1
+<br>
+DB_PORT=3306
+<br>
+DB_DATABASE=nama_database_klinik
+<br>
+DB_USERNAME=username_db
+<br>
+DB_PASSWORD=password_db
+<br>
+<br>
 
-## Code of Conduct
+#MENJALANKAN APLIKASI_KLINIK
+<br>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- php artisan migrate
 
-## Security Vulnerabilities
+- php artisan db:seed --class=UsersTableSeeder
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- php artisan serve
+<br>
+<br>
+#BUKA BROWSER
+<br>
 
-## License
+- http://localhost:8000
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<br>
+<br>
+#AKUN DEFAULT
+<br>
+Berikut akun default yang sudah disediakan oleh sistem:
+<br>
+<br>
+Staff Pendaftaran
+<br>
+
+- Username: pendaftaran
+
+- Password: password
+
+Perawat
+
+- Username: perawat
+
+- Password: password
+
+Dokter
+
+- Username: dokter
+
+- Password: password
+
+Apoteker
+
+- Username: apoteker
+
+- Password: password
+
+<br>
+Terima Kasih...
